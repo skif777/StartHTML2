@@ -1,0 +1,76 @@
+--СКРОЛЛ
+https://alvarotrigo.com/multiScroll/#first - multiScroll.js
+https://alvarotrigo.com/pagePiling/#page1 - pagePiling (типа мультискрола)
+https://scrollrevealjs.org/ - ScrollReveal (анимация при скроле)
+https://michalsnik.github.io/aos/ - michalsnik (анимация при скроле)
+https://wowjs.uk/ wow.js (появлиние при скроле)
+
+--ФОРМЫ
+https://github.com/10w042/email-autocomplete - email-autocomplete (Автозаполнение формы)
+https://github.com/Dimox/jQueryFormStyler - jQuery Form Styler (Стилизация selext и форм элементов)
+
+--ПОИСК
+https://github.com/vdw/HideSeek - HideSeek (плагин «живого» поиска)
+https://github.com/algolia/places - Algolia Places (поиск с автодополнением почтовых адресов, городов, маршрутов)
+
+--ВИДЕО
+https://github.com/corbindavenport/superembed.js - SuperEmbed.js (Обнаруживает на странице встроенное видео и помещает его в адаптивный контейнер.)
+https://plyr.io/#youtube - Plyr (встроенное видео)
+https://codepen.io/mike-zarandona/full/FELxi - PrettyEmbed.js (встроенное видео)
+https://wp-time.com/youtube-popup-jquery-plugin/ - YouTube PopUp JQuery плагин (поможет вывести ваше видео с YouTube или Vimeo во всплывающее PopUp окно. )
+
+--КАРТЫ
+http://leafletjs.com/ - http://leafletjs.com/ (карты)
+http://tilotiti.github.io/jQuery-Google-Map/ (карты)
+https://maplacejs.com/ (карты)
+https://github.com/yandex/mapsapi-round-controls - яндекс
+
+https://github.com/osrec/currencyFormatter.js - currencyFormatter.js (отображение числовых значений в денежном формате)
+
+--ИЗОБРАЖЕНИЯ
+https://feimosi.github.io/baguetteBox.js/ - baguetteBox (всплывающая картинка)
+http://cornel.bopp-art.com/lightcase/ - lightcase (всплывающая картинка)
+http://photoswipe.com/ - photoswipe (всплывающая картинка)
+
+--МЕНЮ
+https://www.adchsm.com/slidebars/ - slidebars (боковое меню)
+https://github.com/lazee/lazeemenu - LazeeMenu (Преобразует вложенные ненумерованные списки в удобное выпадающее меню.)
+
+--ФОН
+https://github.com/VodkaBears/Vide - Vide.js (фоновое видео)
+https://rishabhp.github.io/bideo.js/ Bideo.js (фоновое видео
+https://github.com/qrohlf/trianglify - Trianglify (уникальные геометрические треугольные узоры)
+
+https://maze.digital/webticker/examples/ - Web-ticker (Бегущая строка)
+
+--ТАЙМЕРЫ
+http://hilios.github.io/jQuery.countdown/ - hilios (Таймер)
+http://flipclockjs.com/ - flipclockjs (Таймер)
+
+--СЧЕТЧИКИ
+https://github.com/mhuggins/jquery-countTo countTo (счетчик чисел)
+
+--ТЕКСТ
+http://fittextjs.com/
+http://freqdec.github.io/slabText/
+
+--LazyLoad (Ленивая загрузка для элементов с src)
+https://www.andreaverlicchi.eu/lazyload/
+https://github.com/eisbehr-/jquery.lazy
+https://github.com/vvo/lazyload
+https://github.com/ivopetkov/responsively-lazy
+https://github.com/aFarkas/lazysizes
+https://github.com/dinbror/blazy
+https://github.com/tuupola/jquery_lazyload
+https://github.com/verlok/lazyload#-include-the-script
+
+--МОДАЛЬНЫЕ ОКНА
+http://nisnom.com/modalnye-okna/
+
+--ОСТАЛЬНОЕ
+https://github.com/chrisdavies/tiny-date-picker - tiny-date-picker (Продвинутый календарь)
+https://github.com/Aerolab/readremaining.js - readremaining.js (Показывает сколько времени занимает чтение текста)
+http://iamceege.github.io/tooltipster/ - tooltipster (Стилизация Tooltip)
+https://github.com/chartjs/Chart.js - Chart.js (выводить различные типы диаграмм)
+https://github.com/markserbol/flip-quote - flip-quote (Вращает блоки цитат)
+http://dahliacreative.github.io/sharetastic/ - sharetastic (панель с кнопками социальных сетей)

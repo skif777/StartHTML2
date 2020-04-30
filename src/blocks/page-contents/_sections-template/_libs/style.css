@@ -1,0 +1,47 @@
+.more {
+  display: none;
+}
+
+.modal-wrap {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.modal-wrap::before {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.modal {
+  position: relative;
+  width: 600px;
+  border: 1px solid #111;
+  z-index: 10;
+  background-color: #fff;
+}
+
+.modal__content {
+  padding: 20px;
+}
+
+.modal__close {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal__content_close-icon {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  cursor: pointer;
+}

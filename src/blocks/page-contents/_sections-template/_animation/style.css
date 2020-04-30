@@ -1,0 +1,45 @@
+.btn-left {
+  padding: 5px 20px;
+  border: 1px solid green;
+  color: #000;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.btn-right {
+  padding: 5px 20px;
+  border: 1px solid red;
+  color: #000;
+  text-decoration: none;
+}
+
+.text {
+  margin-top: 15px;
+  width: 500px;
+  margin-bottom: 100px;
+}
+
+.text-enter {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.text-enter-to {
+  opacity: 0.5;
+}
+
+.text-leave {
+  opacity: 0;
+}
+
+.text-leave-to {
+  opacity: 0.5;
+}
+
+.text-enter-active {
+  transition: opacity 1s, transform 1s;
+}
+
+.text-leave-active {
+  transition: opacity 1s;
+}

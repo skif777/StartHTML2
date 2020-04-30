@@ -1,0 +1,33 @@
+
+/* @subsection carousel arrows */
+.projects-carosel 
+	.owl-carousel .owl-nav .owl-prev, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-dot 
+	    width: 30px
+	    height: 30px
+	.owl-carousel .owl-nav .owl-prev
+	    background: url('left-icon.png') no-repeat;
+
+	.owl-carousel .owl-nav .owl-next
+	    background: url('right-icon.png') no-repeat;
+
+/* @subsection carousel-buttons */
+.projects-carosel
+	.owl-buttons-wrap
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	.owl-button
+		width: 16px;
+		height: 16px;
+		border: 2px solid #fff;
+		background-color: transparent
+		display: block;
+		transition: opacity 200ms ease;
+		border-radius: 30px;
+		display: inline-block;
+		&.active
+			width: 16px
+			height: 16px
+			background: url('../img/carousel-active.png')
+			background-position: center
+			border: 2px solid #16d428;
