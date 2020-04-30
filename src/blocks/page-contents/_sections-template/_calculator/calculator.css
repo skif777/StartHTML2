@@ -1,0 +1,64 @@
+.calculator {
+  padding-left: 400px;
+}
+
+.row {
+  display: flex;
+}
+
+.sym {
+  margin: 1px;
+  font-size: 30px;
+  cursor: pointer;
+  border: 1px solid #333;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sym-plus {
+  margin: 1px;
+  font-size: 30px;
+  cursor: pointer;
+  border: 1px solid #333;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sym-ce {
+  margin: 1px;
+  font-size: 30px;
+  cursor: pointer;
+  border: 1px solid #333;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sym-result {
+  margin: 1px;
+  font-size: 30px;
+  cursor: pointer;
+  border: 1px solid #333;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disp {
+  width: 205px;
+  margin-bottom: 20px;
+  height: 40px;
+  border: 1px solid black;
+  padding-left: 10px;
+  font-size: 30px;
+}

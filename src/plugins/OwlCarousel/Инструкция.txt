@@ -1,0 +1,11 @@
+1. ПОДКЛЮЧИТЬ CSS
+   1.1  owl.carousel.min.css
+   1.2  owl.theme.default.min.css
+
+2. ПОДКЛЮЧИТЬ JS
+   2.1 owl.carousel.min.js
+
+3. ИНИЦИАЛИЗИРОВАТЬ ФУНКЦИЮ JQUERY
+
+4. ВЕРТСКА
+   4.1 Не задавать ширину контейнера (не использовать .container bootstrap)

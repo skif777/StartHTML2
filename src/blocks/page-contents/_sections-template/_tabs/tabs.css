@@ -1,0 +1,25 @@
+/**
+ * @section Tabs
+ */
+.tabs {
+
+}
+
+.tabs__buttons {
+	display: flex;
+}
+
+.tab {
+	margin: 20px 30px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.tab-active {
+	opacity: 1;
+}
+
+.tabs__contens {
+	display: flex;
+	padding: 20px;
+}

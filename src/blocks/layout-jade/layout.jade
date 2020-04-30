@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+block variables
+html(lang="ru")
+	head
+		//- head
+		include _head
+
+	body(class="#{body}")
+		
+		//-подсказка по обновлнию браузера
+		include ../page-contents/_sections-template/browserupgrade/browserupgrade
+
+		//- Кнопка на вверх 
+		//-include ../page-contents/_sections-template/up-button/up-button
+
+		//- Header
+		include ../header/header
+
+		//- Content-page
+		block content-page
+
+		//- Cookie
+		include ../page-contents/_sections-template/cookie/cookie
+
+		//- Footer
+		include ../footer/footer
+
+		// JS and CSS
+		link(href="css/style.css" rel="stylesheet")
+		script(src="js/scripts.js" async)
+		// End JS and CSS

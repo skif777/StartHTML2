@@ -1,0 +1,22 @@
+//- Шаблон
+extends ../../layout-jade/layout
+
+//- Переменные 
+block variables
+	- var title = 'Страница не найдена'
+	- var site = 'site.ru'
+	- var link = 'https://my-site.ru'
+	- var description = 'Описание страницы'
+	- var siteName = 'site name'
+	- var keywords = 'Кючевые слова'
+	- var body = 'is-404'
+
+//- Контент
+block content-page
+	// Homepage-content
+	main(class="page-content", role="main")
+	.page__404
+		.container
+			h1(class="page-heading__404 f1-R") 404
+			p(class="paragraph__404 f1-L") Для продолжения работы с сайтом Вы можете перейти на 
+				a(href="index.html" class="link__404") главную страницу сайта.

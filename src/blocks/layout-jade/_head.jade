@@ -1,0 +1,58 @@
+block variables
+// META теги
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="keywords" content="#{keywords}" )
+meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+// Open Graph
+meta(property="og:title" content="#{title}") 
+meta(property="og:type" content="website") 
+meta(property="og:url" content="#{site}" )
+meta(property="og:image" content="images/OpenGraph/og-image.jpg")
+meta(property="og:image:secure_url" content="images/OpenGraph/og-image.jpg")
+meta(property="og:description" name="description" content="#{description}")
+meta(property="og:site_name" content="#{siteName}")
+meta(property="og:locale" content="ru_RU")
+// Заголовок
+title #{title}
+// Canonical
+link(rel="canonical" href="#{link}")
+// Favicon settings
+link(rel="manifest" href="manifest.json")
+meta(name="msapplication-config" content="configfile.xml")
+link(rel="icon" sizes="48x48" href="images/Favicon/icon-48x48.png")
+link(rel="icon" sizes="96x96" href="images/Favicon/icon-96x96.png")
+link(rel="icon" sizes="144x144" href="images/Favicon/icon-144x144.png")
+link(rel="icon" sizes="192x192" href="images/Favicon/icon-192x192.png")
+link(rel="icon" sizes="256x256" href="images/Favicon/icon-256x256.png")
+link(rel="icon" sizes="384x384" href="images/Favicon/icon-384x384.png")
+link(rel="icon" sizes="512x512" href="images/Favicon/icon-512x512.png")
+link(rel="apple-touch-icon" sizes="57x57" href="images/Favicon/apple-touch-icon-57x57.png")
+link(rel="apple-touch-icon" sizes="60x60" href="images/Favicon/apple-touch-icon-60x60.png")
+link(rel="apple-touch-icon" sizes="72x72" href="images/Favicon/apple-touch-icon-72x72.png")
+link(rel="apple-touch-icon" sizes="76x76" href="images/Favicon/apple-touch-icon-76x76.png")
+link(rel="apple-touch-icon" sizes="114x114" href="images/Favicon/apple-touch-icon-114x114.png")
+link(rel="apple-touch-icon" sizes="120x120" href="images/Favicon/apple-touch-icon-120x120.png")
+link(rel="apple-touch-icon" sizes="152x152" href="images/Favicon/apple-touch-icon-152x152.png")
+link(rel="apple-touch-icon" sizes="167x167" href="images/Favicon/apple-touch-icon-167x167.png")
+link(rel="apple-touch-icon" sizes="180x180" href="images/Favicon/apple-touch-icon-180x180.png")
+link(rel="mask-icon" href="images/Favicon/safari-pinned-tab.svg" color="#ff0000")
+meta(name="msapplication-TileColor" content="#ff0000")
+meta(name="msapplication-TileImage" content="images/Favicon/ms-tile-144x144.png")
+// chrome, firefox OS and opera
+meta(name="theme-color" content="#000")
+// windows phone
+meta(name="msapplication-navbutton-color" content="#000")
+// ios safari
+meta(name="apple-mobile-web-app-status-bar-style" content="#000")
+// Preloading images
+link(rel="preload" as="image" href="images/logo.jpg")
+// Preloading fonts
+script(src="./js/webfont-loaded.js" async)
+link(rel="preload" href="#" as="font" type="font/woff2" crossorigin)
+if(body === 'is-home')
+	// Preload Styles
+	style body{opacity:0;overflow-x:hidden;} html{background-color: #000;}
+if(body != 'is-home')
+	// Preload Styles
+	style body{opacity:0;overflow-x:hidden;} html{background-color: #000;}

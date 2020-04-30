@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Please read: https://msdn.microsoft.com/en-us/library/ie/dn455106.aspx -->
+<browserconfig>
+    <msapplication>
+        <tile>
+            <!-- Microsoft рекомендует использовать изображения в 1.8 раза больше размера стандартной плитки -->
+            <square70x70logo src="images/Favicon/ms-tile-126x126.png"/>
+            <square150x150logo src="images/Favicon/ms-tile-270x270.png"/>
+            <wide310x150logo src="images/Favicon/ms-tile-558x270.png"/>
+            <square310x310logo src="images/Favicon/ms-tile-558x558.png"/>
+        </tile>
+    </msapplication>
+</browserconfig>
