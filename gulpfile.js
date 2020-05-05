@@ -41,7 +41,8 @@ const webpackConfig = {
     filename: '[name].js',
     //path: path.resolve(__dirname, 'src/js')
   },
-  devtool: isDev === true ? 'source-map' : 'none',
+  //devtool: isDev === true ? 'source-map' : 'none',
+  devtool: 'source-map',
   module: {
     rules: [
       { 
@@ -89,9 +90,9 @@ gulp.task('sass', function () {
     'src/sass/style.sass',
     'src/blocks/page-contents/index/index.sass',
   ])
-  //.pipe(sourcemaps.init())
+  .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-  //.pipe(sourcemaps.write('./maps'))
+  .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('./src/css'));
 });
 
@@ -101,24 +102,16 @@ gulp.task('postcss', function () {
     autoprefixer(),
   ];
   return gulp.src('./src/css/*.css')
-    .pipe(stripCssComments({ // Удаление комментариев
-      preserve: false
-    }))
     .pipe(postcss(plugins))
-    .pipe(csso({ // Оптимизация css
-      restructure: false,
-      sourceMap: true,
-      debug: true
-    }))
-    .pipe(rename({ // Переименование файла
-      suffix: ".min",
-    }))
     .pipe(gulp.dest('./dist/css'));
 });
 
 // Удаление неиспользуемых классов в css
-gulp.task('css-un', function() {
-  return gulp.src('./dist/*.css')
+gulp.task('css-min', function() {
+  return gulp.src('./src/css/*.css')
+  .pipe(stripCssComments({ // Удаление комментариев
+    preserve: false
+  }))
   .pipe(uncss({ // Удаление лишних классов
       html: [ // Файлы в которых проверяются CSS классы на использование
       'src/*.html',
@@ -128,6 +121,14 @@ gulp.task('css-un', function() {
       /\.js-menu-open/, 
       /\.is-active/,
      ]
+  }))
+  .pipe(csso({ // Оптимизация css
+    restructure: false,
+    sourceMap: true,
+    debug: true
+  }))
+  .pipe(rename({ // Переименование файла
+    suffix: ".min",
   }))
   .pipe(gulp.dest('./dist/css'));
 });
@@ -253,8 +254,8 @@ gulp.task('move-general', function() {
       'src/*.@(html|json|txt|js)',
       'src/fonts/*',
       'src/php/*',
-      'src/css/*.css',
-      'src/js/fontfaceobserver.js'
+      'src/css/*.@(css|css.map)',
+      'src/js/fontfaceobserver.js',
     ], 
     {
       base: './src/'
@@ -275,10 +276,13 @@ gulp.task('move-htaccess', function() {
 // Сборка
 gulp.task('build', gulp.series(
   'clean',
+  'sass',
+  'jade',
   'move-general',
   'move-htaccess',
   'tiny',
   'postcss',
+  'css-min',
   'webpack'
 ));
 

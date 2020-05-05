@@ -10630,96 +10630,11 @@ a.text-dark:hover, a.text-dark:focus {
  * @subpackage Fonts
  * -------------------------- */
 /**
- * @subpackage Components
+ * @subpackage Classes
  * -------------------------- */
-/**
- * @section Global settings
- */
-* {
-  text-decoration: none;
-}
-
-/**
- * @section Line
- */
-.hr {
-  margin: 0 !important;
-  border: 0;
-  display: block;
-  border-top: 1px solid #ccc;
-  height: 1px;
-}
-
-/**
- * @section Изображения
- */
-.img {
-  display: block;
-  margin: 0 auto;
-  width: 100% !important;
-  height: auto !important;
-}
-
-.figure {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-img[data-src], img[data-srcset] {
-  display: block;
-  min-height: 1px;
-}
-
-/**
- * @section Graphics
- */
-audio, canvas, iframe, img, svg, video {
-  vertical-align: middle;
-}
-
-/**
- * @section Ссылки
- */
-a {
-  outline: 0;
-  color: green;
-}
-
-a:hover {
-  color: blue;
-  text-decoration: none;
-}
-
-/* @subsection http */
-a[href^="http://"] {
-  padding-right: 20px;
-}
-
-/* @subsection Emails: 	*/
-a[href^="mailto:"] {
-  padding-right: 20px;
-}
-
-/* @subsection Pdfs */
-a[href$=".pdf"] {
-  padding-right: 20px;
-}
-
 /**
  * @section Текст
  */
-/* @subsection Заголовки  */
-.heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  text-align: center;
-  margin: 0;
-}
-
 /* @subsection Расположение текста  */
 .text-center {
   text-align: center;
@@ -10731,17 +10646,6 @@ a[href$=".pdf"] {
 
 .text-rigth {
   text-align: right;
-}
-
-/* @subsection Выделение текста */
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
 }
 
 /* @subsection Шрифты */
@@ -10791,11 +10695,109 @@ a[href$=".pdf"] {
 }
 
 /**
- * @section Icons
+ * @section Cookie
  */
+.cookie {
+  display: none;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+}
+
+.cookie__content {
+  padding: 7px 15px 7px 15px;
+  overflow-y: auto;
+  height: 51px;
+  display: flex;
+}
+
+@media screen and (max-width: 650px) {
+  .cookie__content {
+    padding: 5px 20px 5px 5px;
+  }
+}
+
+.cookie__content_text {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+
+.cookie__content_link {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.5s ease;
+}
+
+.cookie__content_link:hover {
+  text-decoration: underline;
+}
+
+.cookie__content_close {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.cookie__content_close-img {
+  min-height: 15px;
+  min-width: 15px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
 /**
- * @section Кнопки
+ * @section Подсказка по обновлению браузера
  */
+.browserupgrade {
+  background: #ccc;
+  color: #000;
+  padding: 5px 15px;
+  text-align: center;
+  margin: 0;
+  font-size: 16px;
+}
+
+.browserupgrade a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/**
+ * @section Body
+ */
+body {
+  font-size: 16px;
+  min-width: 320px;
+  line-height: 1.75;
+  overflow-x: hidden;
+  opacity: 1;
+}
+
+/**
+ * @section Page content
+ */
+main {
+  display: block;
+}
+
+.site-content {
+  display: block;
+}
+
+* {
+  text-decoration: none;
+  text-decoration-box-sizing: border-box;
+}
+
+/* @subsection buttons */
 .button {
   display: inline-block;
   white-space: nowrap;
@@ -10806,10 +10808,6 @@ a[href$=".pdf"] {
   background-color: black;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-.webfont-loaded .button {
-  font-family: "FontName", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /**
@@ -10941,121 +10939,86 @@ fieldset {
   filter: blur(10px);
 }
 
-/* @subsection Кнопка на вверх */
-#up-button {
-  border-radius: 33px;
-  background: #000;
-  text-align: center;
-  padding: 25px 13px;
-  position: fixed;
-  bottom: 55px;
-  right: 10px;
-  cursor: pointer;
-  display: none;
-  color: #fff;
-  font-size: 11px;
-  z-index: 899;
-  line-height: 1;
-  color: #fff;
-}
-
 /**
- * @section Cookie
+ * @section Icons
  */
-.cookie {
-  display: none;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 100;
-}
-
-.cookie__content {
-  padding: 7px 15px 7px 15px;
-  overflow-y: auto;
-  height: 51px;
-  display: flex;
-}
-
-@media (max-width: 767.98px) {
-  .cookie__content {
-    padding: 5px 20px 5px 5px;
-  }
-}
-
-.cookie__content_text {
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.3;
-  margin-bottom: 0;
-}
-
-.cookie__content_link {
-  color: #fff;
-  text-decoration: underline;
-  transition: color 0.5s ease;
-}
-
-.cookie__content_link:hover {
-  text-decoration: underline;
-}
-
-.cookie__content_close {
-  width: 15px;
-  height: 15px;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-.cookie__content_close-img {
-  min-height: 15px;
-  min-width: 15px;
+/**
+ * @section Изображения
+ */
+.img {
   display: block;
   margin: 0 auto;
   width: 100%;
   height: auto;
 }
 
+.figure {
+  padding: 0;
+  margin: 0;
+}
+
+img[data-src], img[data-srcset] {
+  display: block;
+  min-height: 1px;
+}
+
+/* @subsection Graphics  */
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
+}
+
 /**
- * @section Подсказка по обновлению браузера
+ * @section Ссылки
  */
-.browserupgrade {
-  background: #ccc;
-  color: #000;
-  padding: 5px 15px;
+a {
+  outline: 0;
+  color: green;
+}
+
+a:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+/* @subsection http */
+a[href^="http://"] {
+  padding-right: 20px;
+}
+
+/* @subsection Emails: 	*/
+a[href^="mailto:"] {
+  padding-right: 20px;
+}
+
+/* @subsection Pdfs */
+a[href$=".pdf"] {
+  padding-right: 20px;
+}
+
+/**
+ * @section Текст
+ */
+/* @subsection Заголовки  */
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
   text-align: center;
   margin: 0;
-  font-size: 16px;
 }
 
-.browserupgrade a {
-  font-weight: 700;
-  text-decoration: underline;
+/* @subsection Выделение текста */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
-/**
- * @section Body
- */
-body {
-  font-size: 16px;
-  min-width: 320px;
-  line-height: 1.75;
-  overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  opacity: 1;
-}
-
-.webfont-loaded body {
-  font-family: "FontName", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-/**
- * @section Page content
- */
-main {
-  display: block;
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 /**
@@ -11151,15 +11114,12 @@ main {
 /**
  * @section Print
  */
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Регулировка стиля для устройств с высоким разрешением */
-}
-
+/* Регулировка стиля для устройств с высоким разрешением */
 /* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   @mixin ========================================================================= */
+	Print styles.
+	Inlined to avoid the additional HTTP request:
+	http://www.phpied.com/delay-loading-your-print-css/
+	@mixin ========================================================================= */
 @media print {
   *, *:before, *:after {
     background: transparent !important;
@@ -11182,10 +11142,6 @@ main {
   .container {
     width: auto;
   }
-  /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
   a[href^="#"]:after, a[href^="javascript:"]:after {
     content: "";
   }
@@ -11197,10 +11153,6 @@ main {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
-  /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
   thead {
     display: table-header-group;
   }
@@ -11219,3 +11171,5 @@ main {
     page-break-after: avoid;
   }
 }
+
+/*# sourceMappingURL=index.css.map */
