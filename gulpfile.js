@@ -108,7 +108,7 @@ gulp.task('postcss', function () {
 
 // Удаление неиспользуемых классов в css
 gulp.task('css-min', function() {
-  return gulp.src('./src/css/*.css')
+  return gulp.src('./dist/css/*.css')
   .pipe(stripCssComments({ // Удаление комментариев
     preserve: false
   }))
