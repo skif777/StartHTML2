@@ -1,0 +1,207 @@
+@import '../blocks/page-contents/_sections-template/cookie/cookie.sass'
+@import '../blocks/page-contents/_sections-template/browserupgrade/browserupgrade.sass'
+
+/**
+ * @section Body
+ */
+html
+.is-home
+body
+	font-size: 16px
+	min-width: 320px
+	line-height: 1.75
+	overflow-x: hidden
+	opacity: 1
+
+
+/**
+ * @section Page content
+ */
+main 
+	display: block
+.site-content
+	@extend %item-base
+
+%item-base
+	display: block
+  
+*
+	text-decoration: none
+  box-sizing: border-box
+
+/* @subsection buttons */
+.button
+	display: inline-block
+	white-space: nowrap
+	width: 60%
+	min-width: 220px
+	padding: 10px 20px
+	text-align: center
+	background-color: black
+	color: #fff
+	font-family: $system-font
+
+/** 
+ * @section Формы
+ */
+input:invalid
+  border-color: red!important
+  outline: 0
+input:valid
+  border-color: green!important
+
+input
+  border: 0
+
+/* @subsection placeholder */
+input::-webkit-input-placeholder
+  color: #333
+  text-overflow: ellipsis
+input::-moz-placeholder /* Firefox 19+ */
+  color: #333
+  text-overflow: ellipsis
+input:-moz-placeholder /* Firefox 18- */
+  color: #333
+  text-overflow: ellipsis
+input:ms-placeholder
+  color: #333
+  text-overflow: ellipsis
+textarea::-webkit-input-placeholder
+  color: #333
+  text-overflow: ellipsis
+textarea::-moz-placeholder /* Firefox 19+ */
+  color: #333
+  text-overflow: ellipsis
+  line-height: 100px
+textarea:-moz-placeholder /* Firefox 18- */
+  color: #333
+  text-overflow: ellipsis
+textarea:ms-placeholder
+  color: #333
+  text-overflow: ellipsis
+
+/* @subsection placeholder при нажатие */
+input:focus::-webkit-input-placeholder
+  color: transparent
+input:focus::-moz-placeholder /* Firefox 19+ */
+  color: transparent
+input:focus:-moz-placeholder /* Firefox 18- */
+  color: transparent
+input:focus:ms-placeholder
+  color: transparent
+textarea:focus::-webkit-input-placeholder
+  color: transparent
+textarea:focus::-moz-placeholder /* Firefox 19+ */
+  color: transparent
+textarea:focus:-moz-placeholder /* Firefox 18- */
+  color: transparent
+textarea:focus:ms-placeholder
+  color: transparent
+
+/* @subsection textarea */
+textarea 
+  resize: vertical
+
+/* @subsection fieldset */
+fieldset
+  border: 0
+  margin: 0
+  padding: 0
+
+/* @subsection Размытие формы после нажатия */
+.form-success
+  display: none
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 10
+  span
+    margin: auto
+    display: block
+    color: #fff
+  & ~ *
+    transition: all .5s ease
+  &.active
+    & ~ *
+      opacity: .5
+      filter: blur(10px)
+
+/** 
+ * @section Icons
+ */
+
+// .iconName
+//   @include sprite($iconName)
+// .iconName
+//   @include sprite($iconName)
+// .iconName
+//   @include sprite($iconName)
+
+/** 
+ * @section Изображения
+ */
+.img 
+	display: block
+	margin: 0 auto
+	width: 100%
+	height: auto
+.figure
+	padding: 0
+	margin: 0
+
+img[data-src], img[data-srcset]
+  display: block;
+  min-height: 1px;
+
+/* @subsection Graphics  */
+audio, canvas, iframe, img, svg, video 
+	vertical-align: middle
+
+/** 
+ * @section Ссылки
+ */
+a 
+	outline: 0
+	color: green
+	&:hover
+		color: blue
+		text-decoration: none
+
+/* @subsection http */
+a[href^="http://"]
+	padding-right: 20px
+
+/* @subsection Emails: 	*/
+a[href^="mailto:"]
+	padding-right: 20px
+ 
+/* @subsection Pdfs */
+a[href$=".pdf"]
+	padding-right: 20px
+
+/** 
+ * @section Текст
+ */
+
+/* @subsection Заголовки  */
+.heading
+	display: flex
+	flex-direction: column
+	align-items: center
+	.h2
+	.paragraph
+  
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6
+	text-align: center
+	margin: 0
+
+/* @subsection Выделение текста */
+::-moz-selection
+	background: #b3d4fc
+	text-shadow: none
+::selection 
+	background: #b3d4fc
+	text-shadow: none
