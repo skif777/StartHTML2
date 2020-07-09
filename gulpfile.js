@@ -17,6 +17,7 @@ const path                    = require('path'),
       zip                     = require('gulp-zip'),
       svgSprite               = require('gulp-svg-sprites'), // Создание SVG sprite
       svgmin                  = require('gulp-svgmin'),
+      gcmq                    = require('gulp-group-css-media-queries'),
       tinypng                 = require('gulp-tinypng-unlimited'),
       spritesmith             = require('gulp.spritesmith'), // CSS Sprite
       stripCssComments        = require('gulp-strip-css-comments'), // Удаление комментариев из CSS
@@ -24,10 +25,22 @@ const path                    = require('path'),
       replace                 = require('gulp-replace'), // Удаление атрибутов
       uncss                   = require('gulp-uncss'), // Удаление не используемых классов в CSS
       csso                    = require('gulp-csso'), // Оптимизация css
+      smartgrid               = require('smart-grid'),
       postcss                 = require('gulp-postcss');
 
 // Режим разработки (false для сборки проекта)
-let isDev = true;
+let isDev = process.argv.indexOf('--prod') !== -1 ? false : true;
+
+// Smart grid
+gulp.task('grid', function(done) {
+  delete require.cache[require.resolve('./smartgrid.js')];
+  const settings = require('./smartgrid.js');
+  smartgrid('./src/libs/smartgrid', settings);
+  // settings.filename = 'smart-grid-2'; // Формирование 2-го файла
+  // settings.offset = '3.1%'
+  // smartgrid('./src/libs/smartgrid', settings);
+  done();
+});
 
 // Настройка Webpack
 const webpackConfig = {
@@ -103,6 +116,7 @@ gulp.task('postcss', function () {
   ];
   return gulp.src('./src/css/*.css')
     .pipe(postcss(plugins))
+    .pipe(gcmq())
     .pipe(gulp.dest('./dist/css'));
 });
 
@@ -188,7 +202,7 @@ gulp.task('webp', () =>
 gulp.task('zip', () =>
     gulp.src('dist/**')
       .pipe(zip('ready.zip'))
-      .pipe(gulp.dest(''))
+      .pipe(gulp.dest('./'))
 );
 
 // CSS Sprite
@@ -234,10 +248,11 @@ gulp.task('watch', function() {
   gulp.watch('src/blocks/**/*.sass', gulp.parallel('sass')); 
   gulp.watch('src/blocks/**/*.jade', gulp.parallel('jade')); 
   gulp.watch('src/js/**/*.js', gulp.parallel('webpack'));
+  gulp.watch('./smartgrid.js', gulp.parallel('grid'));
   // Обновление страницы
-  gulp.watch('src/css/style.css').on('change', browserSync.reload); // reload css
-  gulp.watch('src/*.html').on('change', browserSync.reload); // reload html
-  gulp.watch('src/js/settings/settings.js').on('change', browserSync.reload); // reload js
+  gulp.watch('src/css/style.css').on('change', browserSync.reload);
+  gulp.watch('src/*.html').on('change', browserSync.reload); 
+  gulp.watch('src/js/*.js').on('change', browserSync.reload);
 });
 
 // Команды по умолчанию
@@ -252,8 +267,8 @@ gulp.task('move-general', function() {
   return gulp.src(
     [
       'src/*.@(html|json|txt|js)',
-      'src/fonts/*',
-      'src/php/*',
+      'src/fonts/**',
+      'src/php/**',
       'src/css/*.@(css|css.map)',
       'src/js/fontfaceobserver.js',
     ], 
@@ -285,6 +300,3 @@ gulp.task('build', gulp.series(
   'css-min',
   'webpack'
 ));
-
-
-

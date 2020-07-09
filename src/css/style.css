@@ -10712,7 +10712,7 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative;
 }
 
-.top-line__content {
+.top-line__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10720,25 +10720,29 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 /* @subsection Menu */
-.top-line__menu_list {
+.top-line__menu {
+  border: 1px solid #000;
+}
+
+.top-line__list {
   display: flex;
   list-style-type: none;
   margin: 0;
 }
 
-.top-line__menu_item {
+.top-line__item {
   margin-right: 30px;
 }
 
-.top-line__menu_item:first-child {
+.top-line__item:first-child {
   margin-left: 0;
 }
 
-.top-line__menu_link {
+.top-line__link {
   color: #000;
 }
 
-.js-menu-open {
+.top-line__link_active {
   display: block;
 }
 
@@ -10746,6 +10750,7 @@ a.text-dark:hover, a.text-dark:focus {
 .top-line__logo {
   width: 250px;
   height: 42px;
+  border: 1px solid #000;
 }
 
 .top-line__logo .h1 {
@@ -10837,6 +10842,7 @@ body {
   line-height: 1.75;
   overflow-x: hidden;
   opacity: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /**
@@ -10846,13 +10852,13 @@ main {
   display: block;
 }
 
-.site-content {
-  display: block;
+a {
+  outline: 0;
 }
 
 * {
   text-decoration: none;
-  text-decoration-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* @subsection buttons */
@@ -10872,12 +10878,12 @@ main {
  * @section Формы
  */
 input:invalid {
-  border-color: red !important;
+  border-color: red;
   outline: 0;
 }
 
 input:valid {
-  border-color: green !important;
+  border-color: green;
 }
 
 input {
@@ -10971,35 +10977,6 @@ fieldset {
   padding: 0;
 }
 
-/* @subsection Размытие формы после нажатия */
-.form-success {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-}
-
-.form-success span {
-  margin: auto;
-  display: block;
-  color: #fff;
-}
-
-.form-success ~ * {
-  transition: all .5s ease;
-}
-
-.form-success.active ~ * {
-  opacity: .5;
-  filter: blur(10px);
-}
-
-/**
- * @section Icons
- */
 /**
  * @section Изображения
  */
@@ -11025,19 +11002,6 @@ audio, canvas, iframe, img, svg, video {
   vertical-align: middle;
 }
 
-/**
- * @section Ссылки
- */
-a {
-  outline: 0;
-  color: green;
-}
-
-a:hover {
-  color: blue;
-  text-decoration: none;
-}
-
 /* @subsection http */
 a[href^="http://"] {
   padding-right: 20px;
@@ -11056,13 +11020,6 @@ a[href$=".pdf"] {
 /**
  * @section Текст
  */
-/* @subsection Заголовки  */
-.heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .h1, .h2, .h3, .h4, .h5, .h6 {
   text-align: center;
   margin: 0;
@@ -11085,10 +11042,49 @@ a[href$=".pdf"] {
 /**
  * @section My section
  */
-.block {
-  background: red;
+.debug-grid {
+  height: 100vh;
+  position: fixed;
   width: 100%;
-  height: 5000px;
+  top: 0;
+}
+
+.debug-grid > div {
+  height: inherit;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 780px) {
+  .debug-grid > div {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.debug-grid > div > div {
+  height: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.debug-grid > div > div > div {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(8.33333% - 30px);
+  height: inherit;
+  outline: 1px solid #ff0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  height: 15000px;
 }
 
 /**

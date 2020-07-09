@@ -2,10 +2,9 @@
 header(class='site-header')
 	div(class="top-line")
 		.container
-			div.top-line__content
-				//- include
-				include _sections-template/_logo/logo-text
-				include _sections-template/_menu/menu
+			div.top-line__row
+				include _sections-template/_logo/logo-text.jade
+				include _sections-template/_menu/menu.jade
 
 	if(body === 'is-home')
 	if(body != 'is-home')
